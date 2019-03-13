@@ -40,6 +40,7 @@ function createToDo(){
 	deleteButton.innerHTML = 'delete'
 	deleteButton.onclick = deleteToDo
 	deleteButton.referanceToLi = li
+	deleteButton.referanceToCheckBox = checkBox
 
 	uncheckedItemsCount++
 	uncheckedCountSpan.innerHTML = uncheckedItemsCount
@@ -52,7 +53,7 @@ function createToDo(){
 function deleteToDo() {
 	itemCount--
 	itemCountSpan.innerHTML = itemCount
-	if (!this.checked) {
+	if (!this.referanceToCheckBox.checked) {
 		uncheckedItemsCount--
 		uncheckedCountSpan.innerHTML = uncheckedItemsCount
 	}
