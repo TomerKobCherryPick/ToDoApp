@@ -58,9 +58,7 @@ function deleteToDo() {
 		uncheckedCountSpan.innerHTML = uncheckedItemsCount
 	}
 	toDos = toDos.filter(todo => this.referanceToLi !== todo)
-	list.innerHTML = ''
-	toDos.forEach(todo => list.appendChild(todo))
-	
+	list.removeChild(this.referanceToLi)
 }
 function updateIsChecked(){
 	if (this.checked) {
